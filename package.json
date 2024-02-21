@@ -1,0 +1,20 @@
+{
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SohamB21/Fanatics-Backend.git"
+  },
+  "author": "Soham Banik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SohamB21/Fanatics-Backend/issues"
+  },
+  "homepage": "https://github.com/SohamB21/Fanatics-Backend#readme"
+}
