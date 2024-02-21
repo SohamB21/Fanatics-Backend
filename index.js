@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
 
-// middleware (to connect with the frontend) check
+// middleware (to connect with the frontend)
 app.use(cors());
 app.use(express.json());
 
@@ -44,12 +44,12 @@ async function run() {
       res.send(result);
     });
 
-    // // get all jerseys from the database using GET method
-    // app.get("/all-jerseys", async (req, res) => {
-    //   const jerseys = jerseyCollections.find();
-    //   const result = await jerseys.toArray();
-    //   res.send(result);
-    // });
+    // get all jerseys from the database using GET method
+    app.get("/all-jerseys", async (req, res) => {
+      const jerseys = jerseyCollections.find();
+      const result = await jerseys.toArray();
+      res.send(result);
+    });
 
     // update jersey data in the database using PATCH method
     app.patch("/jersey/:id", async (req, res) => {
@@ -81,6 +81,7 @@ async function run() {
     });
 
     // search a jersey according to category using Queries
+    // (Jersey Sets, Retro Jerseys, Training Wears)
     app.get("/all-jerseys", async (req, res) => {
       let query = {};
       if (req.query?.category) {
