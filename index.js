@@ -44,12 +44,12 @@ async function run() {
       res.send(result);
     });
 
-    // get all jerseys from the database using GET method
-    app.get("/all-jerseys", async (req, res) => {
-      const jerseys = jerseyCollections.find();
-      const result = await jerseys.toArray();
-      res.send(result);
-    });
+    // // get all jerseys from the database using GET method
+    // app.get("/all-jerseys", async (req, res) => {
+    //   const jerseys = jerseyCollections.find();
+    //   const result = await jerseys.toArray();
+    //   res.send(result);
+    // });
 
     // update jersey data in the database using PATCH method
     app.patch("/jersey/:id", async (req, res) => {
@@ -88,6 +88,14 @@ async function run() {
         query = { category: req.query.category };
       }
       const result = await jerseyCollections.find(query).toArray();
+      res.send(result);
+    });
+
+    // to get single jersey data
+    app.get("/jersey/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const result = await jerseyCollections.findOne(filter);
       res.send(result);
     });
 
