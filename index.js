@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-// aWPJ6X1owDmxAo1v test 
+// aWPJ6X1owDmxAo1v
 
 app.get("/", (req, res) => {
   res.send("Hello Fanatics!");
